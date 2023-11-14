@@ -27,8 +27,12 @@ def index(request):
         obj.status_id = status_id
         obj.save()
     data = Details.objects.all().select_related('unit')
+    dataunit= Unit.objects.all()
+
     context = {
             'data': data,
+            'dataunit':dataunit
+
         }
     return render(request, 'app_home/index.html', context)
     

@@ -101,12 +101,10 @@
 
             <div class="form-group 3">
                 <label for="cars">เลือกหน่วยนับ:</label>
-                <select name="cars" id="cars" placeholder="เลือก">
-                      <option value="volvo">รีม</option>
-                      <option value="saab">แท่ง</option>
-                      <option value="mercedes">ด้าม</option>
-                      <option value="audi">ห่อ</option>
-                    </optgroup>
+                <select name="cars" id="cars">
+                    {% for instance in dataunit %}
+                      <option value="{{ instance.unit_name}}">{{ instance.unit_name}}</option>
+                      {% endfor %}
                   </select>
             </div>
 
